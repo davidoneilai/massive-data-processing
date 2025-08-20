@@ -1,6 +1,6 @@
 -- 1. Liste o nome dos 10 clientes que mais compraram no ano de 2023.
 
-WITH totais_2021 AS (
+WITH totais_2023 AS (
   SELECT
     client_id,
     company_id,
