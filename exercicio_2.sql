@@ -6,7 +6,8 @@ WITH orders_jan_2024 AS (
     company_id,
     SUM(items_count) AS total_itens
   FROM `pdm-savio.davidoneilPDM.orders`
-  WHERE DATE(order_date) BETWEEN '2024-01-01' AND '2024-01-31'
+  WHERE EXTRACT(YEAR FROM order_date) = 2024 
+    AND EXTRACT(MONTH FROM order_date) = 1
   GROUP BY client_id, company_id
 ),
 clients_dedup AS (
